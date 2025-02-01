@@ -7,7 +7,7 @@ export default defineConfig({
         port: 5000, // Change this to your app's port
         timeout: 120 * 1000, // Increase if your app takes longer to start
         // eslint-disable-next-line no-undef
-        reuseExistingServer: !process.env.CI, // Reuse server for faster local runs
+        reuseExistingServer: true, // Reuse server for faster local runs
     },
     use: {
         baseURL: 'http://localhost:5000', // Set to match your app's running URL
