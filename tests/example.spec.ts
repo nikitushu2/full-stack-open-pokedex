@@ -10,4 +10,9 @@ describe("Pokedex", () => {
       )
     ).toBeVisible();
   });
+  test("page of particular pokemon can be opened", async ({ page }) => {
+    await page.goto("/"); // Start from the homepage
+    await page.getByText("ivysaur").click(); // Click the link to navigate
+    await expect(page.getByText("chlorophyll")).toBeVisible();
+  });
 });

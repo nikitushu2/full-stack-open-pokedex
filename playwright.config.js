@@ -5,7 +5,7 @@ export default defineConfig({
     webServer: {
         command: 'npm run start-prod', // Change this based on your app's start command
         port: 5000, // Change this to your app's port
-        timeout: 120 * 1000, // Increase if your app takes longer to start
+        timeout: 120 * 10000, // Increase if your app takes longer to start
         // eslint-disable-next-line no-undef
         reuseExistingServer: true, // Reuse server for faster local runs
     },
