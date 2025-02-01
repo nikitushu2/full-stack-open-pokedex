@@ -9,7 +9,7 @@
     "test": "jest",
     "test:e2e": "npx playwright test",
     "eslint": "eslint './**/*.{js,jsx}'",
-    "build": "webpack --mode production & npm install"
+    "build": "npm install & webpack --mode production"
   },
   "repository": {
     "type": "git",
