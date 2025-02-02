@@ -45,17 +45,19 @@ jobs:
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
       
       - name: Test Success
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         if: success()
         with:
-            message: Test Succeeded!
-            webhook: ${{ secrets.DISCORD_WEBHOOK }}
+            args: Test Succeeded!
       - name: Test Failure
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         if: failure()
         with:
-            message: Test Failed!
-            webhook: ${{ secrets.DISCORD_WEBHOOK }}
+            args: Test Failed!
 
   tag_release:
     needs: [simple_deployment_pipeline]
